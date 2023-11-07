@@ -1,0 +1,53 @@
+{% extends 'main/Base.html' %}
+{% load static %}
+{% block title %}
+News List
+{% endblock %}
+
+
+{% block main %}
+<label class="news-label">NEWS</label>
+<section class="news">
+    <article class="news-plate">
+        <img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg">
+        <label class="title">Title</label>
+        <label class="summary">новость — существительное, имеет следующие синонимы: весть известие непривычность</label>
+    </article>
+    {% for nw in news %}
+        <article class="news-plate" onclick=" location.href='{% url 'news_detail' nw.id %}'">
+            <img src="../media/{{ nw.image }}">
+            <label class="title">{{nw.title}}</label>
+            <label class="summary">{{nw.summary}}</label>
+            <a href=""></a>
+        </article>
+    {% endfor %}
+    {% if user.is_authenticated %}
+    <section class="news-form-plate">
+        <form enctype="multipart/form-data" method="post" class="news-form">
+            {% csrf_token %}
+            <label for="title_id">
+                Title:
+                <input name="title" type="text" id="title_id">
+            </label>
+
+            <label >
+                Image:
+                <input name="image" type="file">
+            </label>
+            <label>
+                Summary:
+                <input name="summary" type="text">
+            </label>
+
+            <label >
+                Main part:
+            </label>
+                <textarea name="main_part"></textarea>
+<!--{{ form.as_p }}-->
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    {% endif %}
+</section>
+
+{% endblock %}

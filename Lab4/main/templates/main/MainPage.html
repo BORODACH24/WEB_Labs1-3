@@ -1,0 +1,89 @@
+{% extends 'main/Base.html' %}
+{% load static %}
+
+{% block title %}
+MainPage
+{% endblock %}
+{% block main %}
+    <label class="label-1" id="label-1">WELCOME TO MY WEBSITE</label>
+    <label class="label-2" id="label-2">FOR LAB 4</label>
+    <div class="api-plates">
+        <div class="main-plate" id="joke" accesskey="1">
+            <label class="plate-label">Maybe a joke?</label>
+            <div class="plate-setup">
+                <label>{{ data.setup }}</label>
+                <label>{{ data.punchline }}</label>
+            </div>
+        </div>
+        <div class="main-plate" id="fact">
+            <label class="plate-label">Maybe a fact about cats?</label>
+            <label class="plate-setup">{{ cats.fact }}</label>
+        </div>
+    </div>
+    <div class="advertisement" id="ads" title="Advertisement" accesskey="2">
+    <!--    <img alt="Coral Travel" src="data:image/png;base64,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">-->
+        <a href="https://www.coral.ru" target="_blank">
+            <img alt="Coral Travel" src="https://provse.te.ua/wp-content/uploads/2017/08/sml_gallery_10249_367_167189.jpg">
+        </a>
+        <a href="https://ravishsaini820.myportfolio.com/tour-travel-agency-advertising-banner-design" target="_blank">
+            <img alt="" src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/9ca5499495cc59ee3a8b30773f68ea25/2a0cda83-dd7d-41ad-bd66-cbd4d5ad45fd_rw_1920.jpg?h=1c058d4fe079c2a749ecea40871312cd">
+        </a>
+        <a href="https://travelprofessionalnews.com/the-role-of-a-travel-agent-2/" target="_blank">
+            <img alt="" src="https://travelprofessionalnews.com/wp-content/uploads/2022/01/In-2022-the-role-of-the-Travel-Agent-is-more-important-than-ever-are-you-ready-for-the-challenge-.jpg">
+        </a>
+        {% if user.is_authenticated %}
+        <div class="contextMenu" id="contextMenu">
+            <div>
+                <label>Time:</label>
+                <input type="number" id="interval" value="5">
+            </div>
+            <div>
+                <button id="startButton">Start</button>
+                <button id="stopButton">Stop</button>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <article class="last-news" accesskey="3">
+        <label>Last Newsletter</label>
+        <div class="news-plate" onclick=" location.href='{% url 'news_detail' newsletter.id %}'">
+            <img src="../media/{{ newsletter.image }}">
+            <label class="title">{{newsletter.title}}</label>
+            <label class="summary">{{newsletter.summary}}</label>
+        </div>
+    </article>
+
+    <div class="partners" accesskey="p">
+        <a href="https://asana.com/ru" target="_blank">
+            <img alt="Asana" src="https://play-lh.googleusercontent.com/4ts1ELx9Kpks2R2KWE_hCTBW63gVqR5UrSgE_vq8XEQPITvoBICGxpCaeWqmnWLqmEyy=w512">
+        </a>
+        <a href="https://www.youtube.com" target="_blank">
+            <img alt="YouTube" src="https://icdn.lenta.ru/images/2017/08/30/07/20170830070110276/detail_413ce7a51371483ebac67f2716cfd2b8.jpg">
+        </a>
+        <a href="https://www.jetbrains.com/ru-ru/pycharm/" target="_blank">
+            <img alt="PyCharm" src="https://pythonist.ru/wp-content/uploads/2020/04/pycharm.png">
+        </a>
+    <!--    <a href="" target="_blank">-->
+    <!--        <img alt="" src="">-->
+    <!--    </a>-->
+    </div>
+
+
+<!-- ========================== -->
+<div id="countdown">
+    <div class="minutes-container">
+        <div class="minutes" id="minutes"></div>
+        <div class="minutes-label">minutes</div>
+    </div>
+
+    <div class="seconds-container">
+        <div class="seconds" id="seconds"></div>
+        <div class="seconds-label">seconds</div>
+    </div>
+</div>
+
+<!-- ========================== -->
+{% endblock %}
+{% block script %}
+    <script src="{% static 'JS/MainPage.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'main/Base.html' %}
+
+{% block title %}
+Add Hotel
+{% endblock %}
+{% block main %}
+<form method="post">
+    {% csrf_token %}
+    <p>Name: <input type="text" name="name"></p>
+    <p>Climate in Spring: <input type="text" name="climate_spring"></p>
+    <p>Climate in Summer: <input type="text" name="climate_summer"></p>
+    <p>Climate in Autumn: <input type="text" name="climate_autumn"></p>
+    <p>Climate in Winter: <input type="text" name="climate_winter"></p>
+
+    <button class="login-button" type="submit">Add</button>
+</form>
+{% endblock %}

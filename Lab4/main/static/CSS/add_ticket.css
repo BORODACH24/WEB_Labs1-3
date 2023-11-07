@@ -1,0 +1,90 @@
+.plate{
+  position:relative;
+  height: 100px;
+  max-width: 800px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 24px;
+  padding: 10px;
+  margin: 24px 24px 0px 24px;
+  box-sizing: border-box;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+.plate:hover{
+    transform: scale(1.01);
+}
+.property-block{
+    margin-top: 48px;
+    margin-left: 128px;
+}
+.title-block{
+    position: relative;
+    margin-top: 64px;
+    margin-left: 64px;
+    font-size: 64px;
+    border-bottom: 4px solid #999;
+    max-width: 900px;
+    padding: 24px;
+}
+.name{
+    font-size: 48px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #999;
+
+}
+.back-button{
+  position:absolute;
+  right: 98px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 12px;
+  border-color: grey;
+}
+.submit-button{
+  position:absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 12px;
+  border-color: grey;
+}
+.submit-button:hover{
+  fill: green;
+  border-color: lightgreen;
+  background: transparent;
+}
+.name:focus-visible{
+outline: none;
+
+    border-bottom: 2px solid red;
+
+}
+.simple-input{
+    position: relative;
+    display: block;
+    width: 100%;
+    background: #fff;
+    border-radius: 31px;
+    font-family: Ubuntu-Bold;
+    font-size: 18px;
+    color: #8f8fa1;
+    line-height: 1.2;
+    outline: none;
+    border:  1px solid #CCC;
+    overflow: visible;
+    height: 62px;
+    padding: 0 35px;
+    font-weight: 400;
+    width: 45%;
+    min-width: 400px;
+    max-width: 1000px;
+    box-sizing: border-box;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
+
+}
+form {
+    width:60%;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link href="{% static 'CSS/LoginPage.css' %}" rel="stylesheet" type="text/css"/>
+  <title>HASH TECHIE OFFICIAL</title>
+</head>
+<body>
+<h1>{{form.errors}}</h1>
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                    <h2>You can't register</h2>
+<!--                <form method="post">-->
+<!--                    {% csrf_token %}-->
+<!--                    <div class="inputbox">-->
+<!--                        <ion-icon name="log-in-outline"></ion-icon>-->
+<!--                        {{ form.last_name }}-->
+<!--                        <label>Last name</label>-->
+<!--                    </div>-->
+<!--                    <div class="inputbox">-->
+<!--                        <ion-icon name="log-in-outline"></ion-icon>-->
+<!--                        {{ form.first_name }}-->
+<!--                        <label>First name</label>-->
+<!--                    </div>-->
+<!--                    <div class="inputbox">-->
+<!--                        <ion-icon name="log-in-outline"></ion-icon>-->
+<!--                        {{ form.patronymic }}-->
+<!--                        <label>Patronymic</label>-->
+<!--                    </div>-->
+<!--                    <div class="inputbox">-->
+<!--                        <ion-icon name="log-in-outline"></ion-icon>-->
+<!--                        {{ form.username }}-->
+<!--                        <label>Login</label>-->
+<!--                    </div>-->
+<!--                    <div class="inputbox">-->
+<!--                        {{ form.password1 }}-->
+<!--                        <ion-icon name="lock-closed-outline"></ion-icon>-->
+<!--                        <label>Password</label>-->
+<!--                    </div>-->
+<!--                    <div class="inputbox">-->
+<!--                        {{ form.password2 }}-->
+<!--                        <ion-icon name="lock-closed-outline"></ion-icon>-->
+<!--                        <label>Confirm Password</label>-->
+<!--                    </div>-->
+<!--&lt;!&ndash;                    {{ form.as_p }}&ndash;&gt;-->
+
+<!--                    <button class="login-button" type="submit">Sign Up</button>-->
+<!--                    </form>-->
+                    <div class="register">
+                        <p>Do you have an account ? <a href="http://127.0.0.1:8000/login">Login</a></p>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

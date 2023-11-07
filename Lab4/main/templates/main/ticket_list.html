@@ -1,0 +1,39 @@
+{% extends 'main/Base.html' %}
+
+{% block title %}
+Hotel List
+{% endblock %}
+{% block main %}
+<!--<form action="{% url 'search_tickets' %}" method="GET" xmlns="http://www.w3.org/1999/html">-->
+<!--    <div class="search-box">-->
+<!--        <button class="btn-search"></button>-->
+<!--        <input type="text" name="q" class="input-search" placeholder="Type to Search...">-->
+<!--    </div>-->
+<!--    <input class="search-input" type="text" name="q2" placeholder="Search...">-->
+<!--    <select name="sort">-->
+<!--        <option value="name">Sort by Name</option>-->
+<!--        <option value="stars">Sort by Stars</option>-->
+<!--        &lt;!&ndash; Add more sorting options if needed &ndash;&gt;-->
+<!--    </select>-->
+<!--    <button type="submit">Search</button>-->
+<!--</form>-->
+ <form method="GET" action="{% url 'ticket_list' %}" class="search-form">
+    <input type="text" name="search_query" placeholder="Поиск">
+    <select name="sort_by">
+        <option value="name">По названию</option>
+        <option value="price">По цене</option>
+<!--        <option value="provider">По провайдеру</option>-->
+    </select>
+    <button type="submit" class="action">Применить</button>
+ </form>
+{% if user.is_authenticated %}
+    <button class="add-button" onclick=" location.href='{% url 'add_ticket' %}';" >
+        <svg width="100px" height="100px" viewBox="-2.4 -2.4 28.80 28.80" xmlns="http://www.w3.org/2000/svg" fill="#000000" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(0,0), scale(1)"><path transform="translate(-2.4, -2.4), scale(0.8999999999999999)" d="M16,29.76366997935942C18.472946789454333,29.216710075571584,20.274571238257636,27.334911270389792,22.375054131046703,25.919777857271235C24.422482101465135,24.540388507403485,26.91459887539911,23.68276225935013,28.17589836293571,21.560546465581687C29.495533538136726,19.34017720475399,29.467129397578717,16.653333304739903,29.417217036657,14.070895424309168C29.361346361281896,11.180177657617826,29.537747291794517,8.076420983621858,27.86963980651968,5.7148985601412114C26.148278720073606,3.277985567163633,23.258379769529775,1.8392643439296577,20.33978092176804,1.2200634951595681C17.535962631758352,0.6252141323214617,14.601569323600572,1.163137558563503,11.990854673158696,2.3461049215240806C9.591248158272517,3.433414938563847,7.715964171663517,5.371077495346944,6.290049221659441,7.58627975581755C4.997040089317006,9.59500878468839,4.822581141835398,11.987915624471093,4.286029472599148,14.315785301662906C3.694499523709128,16.882182370433533,2.422626950565166,19.371932891275062,2.980294162655664,21.945900427120748C3.5969196756575705,24.791995764681197,5.015701575646727,27.707961517249018,7.51232700591026,29.207076974687045C9.993336873038306,30.696815962675853,13.174375820535406,30.388634145968748,16,29.76366997935942" fill="#5E5E5E" strokewidth="0"></path></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.048"></g><g id="SVGRepo_iconCarrier"> <title></title> <g id="Complete"> <g data-name="add" id="add-2"> <g> <line fill="none" stroke="#deddda" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12" x2="12" y1="19" y2="5"></line> <line fill="none" stroke="#deddda" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="5" x2="19" y1="12" y2="12"></line> </g> </g> </g> </g></svg>
+    </button>
+{% endif %}
+{% for ticket in tickets %}
+<div class="plate" onclick=" location.href='http://127.0.0.1:8000/tickets/{{ ticket.id }}';">
+    <label>{{ ticket.name }}</label>
+</div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'main/Base.html' %}
+{% load static %}
+{% block title %}
+Add Ticket
+{% endblock %}
+
+{% block style %}
+    <link href="{% static 'CSS/add_ticket.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+
+{% block main %}
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="title-block">
+        <input class="name" name="name" placeholder="Name">
+
+        <button class="back-button" type="button" onclick="location.href='{% url 'ticket_list' %}';">
+            <svg width="50px" height="50px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="icomoon-ignore"> </g> <path d="M14.389 7.956v4.374l1.056 0.010c7.335 0.071 11.466 3.333 12.543 9.944-4.029-4.661-8.675-4.663-12.532-4.664h-1.067v4.337l-9.884-7.001 9.884-7zM15.456 5.893l-12.795 9.063 12.795 9.063v-5.332c5.121 0.002 9.869 0.26 13.884 7.42 0-4.547-0.751-14.706-13.884-14.833v-5.381z" fill="#000000"> </path> </g></svg>
+        </button>
+        <button class="submit-button" type="submit">
+            <svg width="50px" height="50px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="icomoon-ignore"> </g> <path d="M16 2.672c-7.361 0-13.328 5.967-13.328 13.328s5.968 13.328 13.328 13.328c7.361 0 13.328-5.967 13.328-13.328s-5.967-13.328-13.328-13.328zM16 28.262c-6.761 0-12.262-5.501-12.262-12.262s5.5-12.262 12.262-12.262c6.761 0 12.262 5.501 12.262 12.262s-5.5 12.262-12.262 12.262z"> </path> <path d="M22.667 11.241l-8.559 8.299-2.998-2.998c-0.312-0.312-0.818-0.312-1.131 0s-0.312 0.818 0 1.131l3.555 3.555c0.156 0.156 0.361 0.234 0.565 0.234 0.2 0 0.401-0.075 0.556-0.225l9.124-8.848c0.317-0.308 0.325-0.814 0.018-1.131-0.309-0.318-0.814-0.325-1.131-0.018z"> </path> </g></svg>
+        </button>
+    </div>
+  <div class="property-block">
+
+  <h2>Duration:</h2>
+      <select class="simple-input" name="duration" style="margin-left: 24px; font-size:24px;">
+          <option value="1">1 week</option>
+          <option value="2">2 weeks</option>
+          <option value="3">3 weeks</option>
+          <option value="4">4 weeks</option>
+      </select>
+  <h2>Price:</h2>
+              <input class="simple-input" type="number" step="any" name="price" style="margin-left: 24px; font-size:24px;">
+  <h2>Hotels:</h2>
+      {% for hotel in hotels %}
+          <div class="plate">
+              <label>
+                  <input type="checkbox" value="{{hotel.id}}" name="hotels" style="margin-left: 24px; font-size:24px;">
+                  {{ hotel.name }}
+                  {{ hotel.cost_per_day }}
+              </label>
+          </div>
+      {% endfor %}
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,52 @@
+<!-- hotel_detail.html -->
+{% extends 'main/Base.html' %}
+
+{% block title %}
+Hotel Detail
+{% endblock %}
+{% block main %}
+<div class="info">
+
+        {% if user.is_authenticated %}
+            <form method="post">
+            {% csrf_token %}
+                <h1><input type="text" name="name" value="{{ hotel.name }}"></h1>
+                <p>
+                    Stars:
+                    <select name="stars">
+                        <option value="{{ hotel.stars }}" selected>{{ hotel.stars }} (default)</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </p>
+                <p>Price: <input type="text" name="cost_per_day" value="{{ hotel.cost_per_day }}"></p>
+                <p>
+                    Country:
+                    <select name="country">
+                        <option value="{{ hotel.country.id }}">{{ hotel.country.name }} (default)</option>
+                        {% for country in countries%}
+                        <option value="{{ country.id }}">{{ country.name }}</option>
+                        {% endfor %}
+                    </select>
+
+                </p>
+                <button class="login-button" type="submit">Save</button>
+            </form>
+        {% else %}
+            <h1>{{ hotel.name }}</h1>
+            <p>Country: {{ hotel.country.name }}</p>
+            <p>Stars: {{ hotel.stars }}</p>
+            <p>Price: {{ hotel.cost_per_day }}</p>
+        {% endif %}
+
+    </div>
+    <button class="delete-button" onclick=" location.href='{% url 'delete_hotel' hotel.id %}';">
+        <svg
+                width="64px" height="64px" viewBox="-3.2 -3.2 38.40 38.40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="icomoon-ignore"> </g> <path d="M26.129 5.871h-5.331v-1.066c0-1.178-0.955-2.132-2.133-2.132h-5.331c-1.178 0-2.133 0.955-2.133 2.132v1.066h-5.331v1.066h1.099l1.067 20.259c0 1.178 0.955 2.133 2.133 2.133h11.729c1.178 0 2.133-0.955 2.133-2.133l1.049-20.259h1.051v-1.066zM12.268 4.804c0-0.588 0.479-1.066 1.066-1.066h5.331c0.588 0 1.066 0.478 1.066 1.066v1.066h-7.464v-1.066zM22.966 27.14l-0.002 0.027v0.028c0 0.587-0.478 1.066-1.066 1.066h-11.729c-0.587 0-1.066-0.479-1.066-1.066v-0.028l-0.001-0.028-1.065-20.203h15.975l-1.046 20.204z"> </path> <path d="M15.467 9.069h1.066v17.060h-1.066v-17.060z"> </path> <path d="M13.358 26.095l-1.091-17.027-1.064 0.068 1.091 17.027z"> </path> <path d="M20.805 9.103l-1.064-0.067-1.076 17.060 1.064 0.067z"> </path> </g>
+        </svg>
+    </button>
+{% endblock %}
+

@@ -1,0 +1,67 @@
+{% extends 'main/Base.html' %}
+{% load static %}
+{% block title %}
+Contacts
+{% endblock %}
+{% block style %}
+    <link href="{% static 'CSS/contacts.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block main %}
+<label class="main-label">Contacts</label>
+<div class="list" style="width: 60%">
+    <div class="contact-plate">
+        <figure style="width: 100% ">
+            <h3>John Doe</h3>
+            <ul>
+                <li>
+                    Job Title: Travel Advisor
+                </li>
+                <li>
+                    Phone Number: +123-456-7890
+                </li>
+                <li>
+                    Email: john@example.com
+                </li>
+            </ul>
+        </figure>
+        <img style="width: 20%; margin: 24px;" src="https://cdn-icons-png.flaticon.com/512/4086/4086679.png">
+    </div>
+    <div class="FAQ-plate">
+        <figure style="width: 100% ">
+            <h3>Jane Smith</h3>
+            <ul>
+                <li>
+                    Job Title: Digital Marketing Specialist
+                </li>
+                <li>
+                    Phone Number: +987-654-3210
+                </li>
+                <li>
+                    Email: jane@example.com
+                </li>
+            </ul>
+        </figure>
+        <img style="width: 20%; margin: 24px;" src="https://cdn-icons-png.flaticon.com/512/6889/6889369.png">
+    </div>
+    <div class="FAQ-plate">
+        <figure style="width: 100% ">
+            <h3>David Johnson</h3>
+            <ul>
+                <li>
+                    Job Title: Customer Support Representative
+                </li>
+                <li>
+                    Phone Number: +456-789-1230
+                </li>
+                <li>
+                    Email: david@example.com
+                </li>
+            </ul>
+        </figure>
+        <img style="width: 20%; margin: 24px;" src="https://cdn-icons-png.flaticon.com/512/4164/4164583.png">
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+<!-- hotel_detail.html -->
+{% extends 'main/Base.html' %}
+
+{% block title %}
+Country Detail
+{% endblock %}
+{% block main %}
+<div class="info">
+     <form method="post">
+            {% csrf_token %}
+                <h1><input type="text" name="last_name" value="{{ client.last_name }}"></h1>
+                <p>first_name: <input type="text" name="first_name" value="{{ client.first_name }}"></p>
+                <p>patronymic: <input type="text" name="patronymic" value="{{ client.patronymic }}"></p>
+                <p>email: <input type="email" name="email" value="{{ client.email }}"></p>
+                <p>phone_number: <input type="text" name="phone_number" value="{{ client.phone_number }}"></p>
+                <p>date: <input type="date" name="date" value="{{ client.date }}"></p>
+                <button class="login-button" type="submit">Save</button>
+            </form>
+    </div>
+{% endblock %}
+

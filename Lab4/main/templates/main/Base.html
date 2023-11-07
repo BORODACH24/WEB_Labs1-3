@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="author" content="Me" />
+    <meta
+      name="description"
+      content="Cite for Lab4" />
+    <link rel="shortcut icon" href="https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/slzjhsi5zb3cu3lnmmfw" />
+    <link href="{% static 'CSS/Base.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'CSS/MainPage.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'CSS/hotel_list.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'CSS/hotel_detail.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'CSS/newsList.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'CSS/FAQList.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'CSS/feedback_list.css' %}" rel="stylesheet" type="text/css"/>
+<!--    <link href="{% static 'CSS/about_us.css' %}" rel="stylesheet" type="text/css"/>-->
+
+    {% block style %}{% endblock %}
+</head>
+<body>
+    <header>
+<!--        <label class="logo" onclick=" location.href='{% url 'home' %}';">Lab 4</label>-->
+        <button class="menu-burger" id="menu-button"><span></span></button>
+        <nav class="menu" id="menu">
+            <div class="menu-links">
+                <a class="link" href="{% url 'ticket_list' %}">Tickets</a>
+                <a class="link" href="{% url 'country_list' %}">Countries</a>
+                <a class="link" href="{% url 'hotel_list' %}">Hotels</a>
+                <a class="link" href="{% url 'promo_codes' %}">Promo codes</a>
+                {% if user.is_authenticated %}
+                    {% if user.is_staff %}
+                        <a class="link" href="{% url 'client_list' %}">Clients</a>
+                    {% endif %}
+                    <a class="link" href="{% url 'order_list' %}">Orders</a>
+                {% endif %}
+            </div>
+            <div class="menu-login">
+                {% if request.user.is_authenticated %}
+                        <label>{{ user.username }}</label>
+                        |
+                        <a class="link"  href="{% url 'logout' %}">Logout</a>
+                {% else %}
+                        <a class="link"  href="{% url 'login' %}">Login</a>
+                        |
+                        <a class="link"  >You can't register</a>
+                {% endif %}
+            </div>
+        </nav>
+</header>
+
+    <a id="top"></a>
+    <main class="main-block">
+        {% block main %}{% endblock %}
+        <a href="#top" id="toTop" class="top-button">
+            <svg width="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M17 15L12 10L7 15" stroke="#cccccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+        </a>
+    </main>
+    <footer>
+        <a  href="{% url 'news_list' %}">News</a>
+        <a  href="{% url 'FAQ_list' %}">FAQ</a>
+        <a  href="{% url 'vacancies_list' %}">Vacancies</a>
+        <a  href="{% url 'feedback_list' %}">Feedback</a>
+        <a  href="{% url 'privacy_policy' %}">Privacy Policy</a>
+        <a  href="{% url 'contacts' %}">Contacts</a>
+        <a  href="{% url 'about_us' %}">About us</a>
+    </footer>
+    <script src="{% static 'JS/Base.js' %}"></script>
+    {% block script %}{% endblock %}
+</body>
+</html>

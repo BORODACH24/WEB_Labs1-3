@@ -1,0 +1,204 @@
+{% extends 'main/Base.html' %}
+{% load static %}
+{% block title %}
+About Us
+{% endblock %}
+
+{% block style %}
+    <link href="{% static 'CSS/about_us.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block main %}
+<h1 class="main-label">Wanderlust Adventures</h1>
+<label class=""></label>
+<fieldset class="overview">
+      <legend>Overview:</legend>
+    <dl>
+        <dt>
+            Wanderlust Adventures
+        </dt>
+        <dd>
+           a leading travel company that specializes in curating unforgettable travel experiences for adventurers, explorers, and culture enthusiasts. We are passionate about helping people discover the beauty of the world and create lifelong memories through exceptional travel.
+        </dd>
+    </dl>
+</fieldset>
+<fieldset class="overview">
+      <legend><strong>History by Year:</strong></legend>
+    <figure>
+        <b>Year 2005: The Founding</b>
+        <ul>
+            <li>
+                <abbr title="Wanderlust Adventures">WA</abbr> was founded by Sarah and David Smith, avid travelers themselves.
+            </li>
+            <li>
+                The company started as a small travel agency in their hometown, offering local tours and excursions.
+            </li>
+        </ul>
+    </figure>
+    <figure>
+        <b>Year 2008: Expanding Horizons</b>
+        <ul>
+            <li>
+                <abbr title="Wanderlust Adventures">WA</abbr> expanded its offerings to include international destinations, focusing on sustainable and responsible tourism.
+            </li>
+            <li>
+                Introduced customized travel itineraries to cater to diverse customer preferences.
+            </li>
+        </ul>
+    </figure>
+    <figure>
+        <b>Year 2012: Going Digital</b>
+        <ul>
+            <li>
+                Launched a user-friendly website and online booking platform.
+            </li>
+            <li>
+                Expanded the team to include travel experts and destination specialists.
+            </li>
+        </ul>
+    </figure>
+    <figure>
+        <b>Year 2015: Sustainability Commitment</b>
+        <ul>
+            <li>
+                Became a certified B Corp and pledged to uphold the highest standards of environmental and social responsibility.
+            </li>
+            <li>
+                Started offering eco-friendly travel options and partnerships with eco-conscious accommodations.
+            </li>
+        </ul>
+    </figure>
+    <figure>
+        <b>Year 2018: Global Recognition</b>
+        <ul>
+            <li>
+                Wanderlust Adventures received the "Best Travel Company" award from National Travel Association.
+            </li>
+            <li>
+                Expanded operations to cover six continents and over 100 countries.
+            </li>
+        </ul>
+    </figure>
+    <figure>
+        <b>Year 2020: Adapting to Challenges</b>
+        <ul>
+            <li>
+                Faced challenges due to the COVID-19 pandemic and introduced flexible booking policies.
+            </li>
+            <li>
+                Launched virtual travel experiences to keep the spirit of exploration alive during lockdowns.
+            </li>
+        </ul>
+    </figure>
+    <figure>
+        <b>Year 2022: Embracing Technology</b>
+        <ul>
+            <li>
+                Implemented cutting-edge virtual reality (VR) experiences to give travelers a preview of their destinations.
+            </li>
+            <li>
+                Continued to grow the online community of travel enthusiasts through blogs and social media.
+            </li>
+        </ul>
+    </figure>
+    <figure>
+        <b>Year 2023: Sustainable Initiatives</b>
+        <ul>
+            <li>
+                Partnered with local communities to launch sustainable tourism projects in several regions.
+            </li>
+            <li>
+                Introduced carbon offset programs for all trips to minimize environmental impact.
+            </li>
+        </ul>
+    </figure>
+</fieldset>
+<fieldset class="overview">
+    <legend><b>Additional Details:</b></legend>
+    <ol>
+        <li>
+            Wanderlust Adventures is known for its knowledgeable and passionate travel advisors who provide personalized recommendations to each traveler.
+        </li>
+        <li>
+            The company prides itself on supporting local businesses and promoting cultural exchange in every destination.
+        </li>
+        <li>
+            Wanderlust Adventures is committed to responsible tourism, ensuring that their trips benefit both travelers and the communities they visit.
+        </li>
+        <li>
+            The company offers a wide range of travel options, from luxury getaways to budget-friendly backpacking adventures.
+        </li>
+        <li>
+            Wanderlust Adventures frequently organizes group tours, solo travel packages, and family-friendly vacations.
+        </li>
+    </ol>
+</fieldset><br/>
+<iframe width="840" height="473" src="https://www.youtube.com/embed/uCNWuSbPnt4?si=UIAbKC3mnW_Dx0NC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <audio controls src="/media/Muse - Mk Ultra.mp3">
+    <a href="/media/Muse - Mk Ultra.mp3"> Download audio </a>
+  </audio>
+<table>
+
+    <thead>
+        <tr>
+            <th colspan="2">Время работы:</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>пн.-пт.:</td>
+            <td>с <time datetime="twelve">12:00</time> до 18:00</td>
+        </tr>
+        <tr>
+            <td>сб.вс.:</td>
+            <td>с 9:00 до 21:00</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="certificate">
+    <div class="content">
+        <h2>Единый реестр турагенств</h2>
+        <h1>свидетельство</h1>
+        <h3>о внесении сведений</h3>
+        <article>
+            <p>г. Минск</p>
+            <time datetime="2023-08-31">August 31</time>
+        </article>
+
+        <hr/>
+        <p class="signature">Имя Подпись</p>
+    </div>
+</div>
+<p class="gradient-text">Градиентный текст</p>
+<pre>
+<code>
+class Hotel(models.Model):
+    name = models.CharField('Name', max_length=50)
+    stars = models.IntegerField('Stars', choices=[(1, '1 star'), (2, '2 stars'), (3, '3 stars'), (4, '4 stars'), (5, '5 stars')])
+    cost_per_day = models.FloatField('Cost per day')
+    country = models.ForeignKey(Country, on_delete=models.CASCADE)
+</code>
+</pre>
+<dfn title="Contrada Sanna">Contrada Sanna 461 Appartamento 75</dfn>
+<hr  color="grey" size="4" width="50%">
+<mark><q cite="https://www.ef.ru/blog/language/50-luchshih-citat/">
+    Предрассудки, нетерпимость и узколобость <wbr>
+    губительны для путешествий» –
+    <a href="http://127.0.0.1:8000/sandbox/" style="text-decoration: none;">
+        Марк Твен.
+    </a>
+</q></mark>
+<blockquote translate="no" cite="https://www.huxley.net/bnw/four.html">
+  Words can be like X-rays, if you use<wbr/> them properly—they’ll go through anything. You read and you’re pierced. —Aldous Huxley, <cite>Brave New World</cite>
+</blockquote>
+<!--<video>-->
+<!--    <source src="https://www.youtube.com/watch?v=dQw4w9WgXcQ">-->
+<!--</video>-->
+<!--<iframe width="420" height="315"-->
+<!--src="https://www.youtube.com/embed/dQw4w9WgXcQ">-->
+<!--</iframe>-->
+<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player"></iframe>-->
+<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/xm3YgoEiEDc?si=o4bCzTzu5Q6VTuu-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
+<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/uHgt8giw1LY?si=ZJ1rKe0zEqW5uN65" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
+{% endblock %}

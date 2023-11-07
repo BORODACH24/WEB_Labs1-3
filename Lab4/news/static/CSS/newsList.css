@@ -1,0 +1,138 @@
+.news-label{
+    margin-top: 64px;
+    margin-bottom: 32px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 64px;
+    /* identical to box height, or 64px */
+    color: #000000;
+    backdrop-filter: blur(2px);
+}
+
+.news{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.news-plate{
+    width: 100%;
+    min-height: 200px;
+    background: #bdbdbd;
+    border-radius: 24px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 1fr 2fr;
+}
+@media (max-width: 900px) {
+    .news-plate{
+        display: grid;
+        grid-template-rows: 4fr 1fr 1fr;
+        grid-template-columns: auto;
+        justify-items: center;
+    }
+}
+
+.news-plate .title{
+    grid-column: 2;
+    grid-row: 1;
+    margin: auto 0;
+    font-size: 48px;
+    font-size: calc(12px + 2vw);
+}
+@media (max-width: 900px) {
+
+    .news-plate .title{
+        grid-column: 1;
+        grid-row: 2;
+    }
+}
+
+.news-plate .summary{
+    grid-column: 2;
+    grid-row: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 80%;
+}
+@media (max-width: 900px) {
+    .news-plate .summary{
+        grid-column: 1;
+        grid-row: 3;
+    }
+}
+
+.news-plate img{
+    grid-column: 1;
+    grid-row: 1/3;
+    margin: 24px;
+    border-radius: 24px;
+    place-self: center;
+    max-height: 320px;
+}
+@media (max-width: 900px) {
+    .news-plate img{
+        grid-column: 1;
+        grid-row: 1;
+        max-width: 80%;
+    }
+}
+
+.news-form-plate{
+    width: 100%;
+    min-height: 200px;
+    background: #bdbdbd;
+    border-radius: 24px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    margin: auto;
+
+}
+.news-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 24px;
+    gap:12px;
+
+}
+.news-form input, textarea{
+    width: 90%;
+    min-height: 24px;
+    background: none;
+    border-radius: 12px;
+    border: 1px solid #5D5D5D;
+    padding: 4px 12px;
+}
+.news-form  textarea{
+    max-width: 96%;
+    width: 96%;
+    padding-top: 12px;
+    margin-left: 2%;
+}
+.news-form  button{
+    margin: auto;
+    min-width: 20%;
+    min-height: 48px;
+    border-radius: 24px;
+    border: none;
+    background: #dddddd;
+}
+.news-form  button:hover{
+    transform: scale(1.1);
+}
+.news-letter{
+    display: flex;
+    flex-direction: column;
+    margin: 64px;
+    gap: 12px;
+}
+.news-letter img{
+    width: 10%;
+    float: left;
+}
+.main_part{
+    columns: 150px 3;
+}

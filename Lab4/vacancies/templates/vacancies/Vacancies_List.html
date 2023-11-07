@@ -1,0 +1,61 @@
+{% extends 'main/Base.html' %}
+{% load static %}
+{% block title %}
+News List
+{% endblock %}
+
+{% block style %}
+    <link href="{% static 'CSS/newsList.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block main %}
+<label class="main-label">Vacancies</label>
+<div class="list">
+<!--    <div class="feedback-plate">-->
+<!--        <figure>-->
+<!--            <label class="title">Test</label><br/>-->
+<!--            <label class="job_type">Full-Time</label><br/>-->
+<!--            <label class="description">The Web Developer will be responsible for maintaining and enhancing our website and mobile application. You'll work on user interface design, site functionality, and user experience improvements.</label>-->
+
+<!--        </figure>-->
+<!--    </div>-->
+    {% for v in vacancies %}
+        <div class="feedback-plate">
+            <figure>
+                <label class="title">{{v.title}}</label><br/>
+                <label class="job_type">{{v.job_type}}</label><br/>
+                <label class="description">{{v.description}}</label>
+            {% if user.is_authenticated %}
+                <button onclick=" location.href='http://127.0.0.1:8000/vacancies/delete/{{ v.id }}';">
+                    <svg width="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M5.46967 5.46967C5.76256 5.17678 6.23744 5.17678 6.53033 5.46967L18.5303 17.4697C18.8232 17.7626 18.8232 18.2374 18.5303 18.5303C18.2374 18.8232 17.7626 18.8232 17.4697 18.5303L5.46967 6.53033C5.17678 6.23744 5.17678 5.76256 5.46967 5.46967Z" fill="#000000"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M18.5303 5.46967C18.8232 5.76256 18.8232 6.23744 18.5303 6.53033L6.53035 18.5303C6.23745 18.8232 5.76258 18.8232 5.46969 18.5303C5.17679 18.2374 5.17679 17.7626 5.46968 17.4697L17.4697 5.46967C17.7626 5.17678 18.2374 5.17678 18.5303 5.46967Z" fill="#000000"></path> </g></svg>
+                </button>
+            {% endif %}
+            </figure>
+        </div>
+    {% endfor %}
+    {% if user.is_authenticated %}
+    <div class="FAQ-form-plate">
+        <form enctype="multipart/form-data" method="post" class="FAQ-form">
+            {% csrf_token %}
+            <label for="title_id">
+                Title:
+            </label>
+                <input name="title" type="text" id="title_id">
+
+            <label>
+                Job Type:
+            </label>
+                <input name="job_type" type="text">
+
+            <label >
+                Description:
+            </label>
+                <textarea name="description"></textarea>
+<!--{{ form.as_p }}-->
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,267 @@
+.sandboxLink{
+    background: green;
+
+}
+.sandboxLink:visited{
+    background-color: lightgreen;
+}
+.sandboxLink:hover{
+    transform: scale(2);
+}
+.sandboxLink:active{
+    background: red;
+}
+.sandboxLink:focus{
+    outline: 5px ridge red;
+    transform: scale(3);
+}
+/*--------------------------------*/
+li:first-child{
+    background: lightgreen;
+}
+li:nth-child(2n){
+    border: 1px solid red;
+}
+li:last-child{
+    background: yellow;
+}
+li::marker {
+    content: "\1F602"; /* Оформление маркеров символами юникода */
+}
+/*--------------------------------*/
+input{
+    line-height: 24px;
+    border-radius: 8px;
+}
+input:required{
+    border-color: red;
+}
+input:disabled{
+    background: skyblue;
+}
+input:out-of-range{
+    background: red;
+}
+/*
+input:checked{
+    margin-left: 24px;
+}
+*/
+/*--------------------------------*/
+q {
+  quotes: "»« " " »«";
+}
+q:lang(ru) {
+  quotes: "«" "»";
+}
+q:lang(fr) {
+  quotes: "»" "«";
+}
+/*--------------------------------*/
+#sandbox-label{
+    font-size: 20px;
+}
+#sandbox-label::first-letter{
+    font-size: 32px;
+    color: gold;
+}
+#sandbox-label::after{
+    content: " - Лао-цзы";
+}
+#sandbox-label::selection {
+    background-color: orange; /* Стиль при выделении текста */
+    color: white;
+}
+/*--------------------------------*/
+/* Все ссылки с url заканчивающимся на .cn будут красными */
+.test-kerning{
+    font-family: "Times New Roman", serif;
+    font-size: 10em;
+    font-kerning: normal;
+    margin-top: 30px;
+}
+.test-kerning::before{
+    content:'';
+    position: absolute;
+    width: 50px;
+
+    aspect-ratio: 1;
+    background: red;
+    background: url('https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/slzjhsi5zb3cu3lnmmfw') center center; /* Замените 'your-image.png' на путь к вашему изображению */
+    background-size: 100%; /* Устанавливаем размер изображения (ширина x высота) */
+
+    animation: 4s linear 0s infinite reverse example;
+}
+@keyframes example {
+  0% {transform: translate(-100%,-50%)}
+  25% {transform: translate(-100%,300%)}
+  50% {transform: translate(500%,300%)}
+  75% {transform: translate(500%,-50%)}
+  100% {transform: translate(-100%,-50%)}
+}
+.test-float{
+    width: 80%;
+    /*height: 100px;*/
+    text-indent: 20px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    text-align: center;
+    letter-spacing: 2px; /* Интервал между символами */
+    word-spacing: 5px; /* Интервал между словами */
+}
+.test-float::first-line{
+    font-variant: small-caps;
+}
+img[class^="img"] {
+  width: 20%;
+  /*height: 100%;*/
+  color: white;
+  cursor: grab;
+}
+img[class$="left"] {
+  float: left;
+  background: blue;
+  transform: scaleX(-1);
+  margin-right: 24px;
+}
+img[class$="right"] {
+  float: right;
+  background: red;
+  margin-left:24px
+}
+/*--------------------------------*/
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    /*border: 1px solid #6f6f6f;*/
+}
+
+th {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 10px;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+tr:nth-child(odd) {
+    background-color: #e0e0e0;
+}
+
+td:empty {
+    background-color: #aeaeae;
+}
+
+tr:hover {
+    background-color: #ffff99;
+}
+
+caption {
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.container {
+    width: 80%;
+-webkit-columns: 150px 3; /* для поддержки ранних версий браузеров */
+ -moz-columns: 150px 3; /* для поддержки ранних версий браузеров */
+columns: 150px 3; /* указываем оптимальную ширину и количество
+колонок на которое необходимо разбить элемент */
+}
+section{
+    border: 2px solid grey;
+    padding: 4px;
+}
+section > p{
+    background: red;
+}
+div + label{
+    background: lightblue;
+}
+
+.wraper{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    gap: 12px;
+}
+.box{
+    width: 100px;
+    aspect-ratio: 1;
+    background: red;
+
+}
+
+.JS_table {
+  border-collapse: collapse;
+}
+
+.JS_table td {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+.JS_table .selected-even {
+  background-color: lightblue;
+}
+
+.JS_table .selected-odd {
+  background-color: lightgreen;
+}
+#bookSearchForm{
+    margin-top: 64px;
+}
+.JS-plate{
+    width: 80%;
+    height: 400px;
+    border-radius: 16px;
+    background: #cccccc;
+    display: flex;
+    box-shadow: 5px 5px 10px gray;
+
+    margin-top: 64px;
+}
+.JS-plate div{
+    flex: 1;
+    padding: 24px;
+    box-shadow: 5px 0px 10px 0px #a4a4a4;
+    border-radius: 16px;
+    background: white;
+    overflow-y: scroll;
+}
+.JS-form{
+    width: 0;
+    border-radius: 8px;
+    padding: 0;
+    flex-direction: column;
+    gap: 12px;
+    transition-duration: 0.4s;
+    opacity:0;
+}
+.JS-form.active{
+    width: 20%;
+    padding: 24px;
+    opacity: 1;
+}
+.JS-form label{
+    display: flex;
+    gap: 4px;
+}
+#jsTextColor, #jsBackgroundColor, #jsTextSize{
+    display: none;
+}
+#jsTextColor, #jsBackgroundColor{
+    display: none;
+    width: 100%;
+}

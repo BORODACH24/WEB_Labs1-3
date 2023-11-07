@@ -1,0 +1,67 @@
+
+
+<!--<body>-->
+<!--{% if error %}-->
+<!--        alert('Click!')-->
+<!--        {% endif %}-->
+
+<!--          <div class="LeftBox">-->
+<!--                <label class="LeftLabel">Log In</label>-->
+
+<!--                <form method="post">-->
+<!--                    {% csrf_token %}-->
+<!--                    {{ form.as_p }}-->
+<!--                    <button class="login-button" type="submit">Log in</button>-->
+<!--                </form>-->
+<!--                &lt;!&ndash;<button  data-href-templates="" onclick="alert('Click!')">Log in</button>&ndash;&gt;-->
+<!--            </div>-->
+
+
+<!--</body>-->
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link href="{% static 'CSS/LoginPage.css' %}" rel="stylesheet" type="text/css"/>
+  <title>HASH TECHIE OFFICIAL</title>
+</head>
+<body>
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                    <h2>Login</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="inputbox">
+                        <ion-icon name="log-in-outline"></ion-icon>
+                        {{ form.username }}
+                        <label>Login</label>
+                    </div>
+                    <div class="inputbox">
+                        {{ form.password }}
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <label>Password</label>
+                    </div>
+
+                    <button class="login-button" type="submit">Log in</button>
+                </form>
+                <div class="register">
+                    <p>Don't have a account <a href="http://127.0.0.1:8000/signup">Register</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--                    <form method="post">-->
+<!--                        {% csrf_token %}-->
+<!--                        {{ form.as_p }}-->
+<!--                        <button class="login-button" type="submit">Log in</button>-->
+<!--                    </form>-->
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

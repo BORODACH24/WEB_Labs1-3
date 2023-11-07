@@ -1,0 +1,12 @@
+{% extends 'main/Base.html' %}
+
+{% block title %}
+Hotel List
+{% endblock %}
+{% block main %}
+{% for client in clients %}
+<div class="plate" onclick=" location.href='http://127.0.0.1:8000/clients/{{ client.id }}';">
+    <label>{{ client.last_name }}</label>
+</div>
+{% endfor %}
+{% endblock %}

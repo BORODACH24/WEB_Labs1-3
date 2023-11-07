@@ -1,0 +1,25 @@
+.info{
+    position: absolute;
+    margin: 24px;
+    display: block;
+}
+.info p{
+    margin: 24px;
+}
+.info h3{
+    margin: 24px;
+}
+.delete-button{
+    position: absolute;
+    margin: 24px;
+    right: 0px;
+    border-radius: 24px;
+    background: transparent;
+    border: 2px solid grey;
+}
+.delete-button:hover svg{
+    fill: red;
+}
+.delete-button:hover{
+    border: 2px solid red;
+}

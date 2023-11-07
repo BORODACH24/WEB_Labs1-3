@@ -1,0 +1,57 @@
+{% extends 'main/Base.html' %}
+{% load static %}
+
+{% block title %}
+Add Hotel
+{% endblock %}
+{% block style %}
+    <link href="{% static 'CSS/add_ticket.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block main %}
+<form method="post">
+    {% csrf_token %}
+    <h1>Client info</h1>
+    <p>Last name: <input type="text" name="last_name"></p>
+    <p>First name: <input type="text" name="first_name"></p>
+    <p>Patronymic: <input type="text" name="patronymic"></p>
+    <p>Email: <input type="email" name="email"></p>
+    <p>Phone number: <input type="text" name="phone_number"></p>
+    <p>Date: <input type="date" name="date"></p>
+    <p>departure_date: <input type="date" name="departure_date"></p>
+
+    <select name="discount" id="discountSelect">
+        <option value="default"></option>
+        {% for pr in promos %}
+        <option value="{{pr.id}}">{{pr.promo_code}}</option>
+        {% endfor %}
+    </select>
+    <div class="promocode-plate" id="promocodePlate" style="display: none">
+        <div>
+            <label id="promo_code" class="">Promo Code: {{pr.promo_code}}</label>
+            <label id="discount" class=""></label>
+            <label class=""></label>
+        </div>
+        <label id="description" class="">{{pr.description}}</label>
+    </div>
+    <br/>
+    <label style="width:100px;" id="totalSum">Total sum: 0</label>
+    <h2>Choose tickets:</h2>
+    <section id="ticketList">
+
+          {% for ticket in tickets %}
+              <div class="plate">
+                      <input type="checkbox" value="{{ticket.id}}" name="tickets" style="margin-left: 24px; font-size:24px;">
+                      <label id="ticket-{{ticket.id}}-name">{{ ticket.name }}</label>
+                      <label id="ticket-{{ticket.id}}-price">{{ ticket.price }}</label>
+              </div>
+          {% endfor %}
+    </section>
+
+
+    <button class="login-button" type="submit">Add</button>
+</form>
+{% endblock %}
+{% block script %}
+    <script src="{% static 'JS/Add_order.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,278 @@
+.label-1-{
+    position: absolute;
+    width: 1032px;
+    height: 64px;
+    left: 50%;
+    top: 16%;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 100%;
+    /* identical to box height, or 64px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    color: #000000;
+
+    backdrop-filter: blur(2px);
+}
+.label-1{
+    position: relative;
+    margin-top: 16vh;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 64px;
+    /* identical to box height, or 64px */
+    color: #000000;
+    text-align: center;
+}
+.label-2-{
+    position: absolute;
+    width: 300px;
+    height: 48px;
+    left: 50%;
+    top: 24%;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 100%;
+    /* identical to box height, or 48px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    color: #000000;
+}
+.label-2{
+    position: relative;
+    margin-top: 2vh;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    color: #000000;
+}
+.api-plates{
+    position: relative;
+    margin-top: 10vh;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+.main-plate{
+    box-sizing: border-box;
+
+    position: relative;
+    width: 30vw;
+    height: 36vh;
+    min-width: 350px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 11px solid #929292;
+    border-radius: 48px;
+}
+.joke{
+    left: 12%;
+}
+.fact{
+    right: 12%;
+}
+.plate-label{
+    position: relative;
+    margin-top: 24px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    color: #000000;
+    text-align: center;
+}
+.plate-setup{
+    position: relative;
+    margin: auto 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+@media screen and (max-width: 1100px) {
+    .api-plates{
+        position: relative;
+        margin-top: 10vh;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+}
+.advertisement{
+    position: relative;
+    margin-top: 30vh;
+    width: 80%;
+    height: 440px;
+    display: flex;
+    justify-content: center;
+    /*animation: 4s linear 0s infinite alternate sun-rise;*/
+}
+
+@keyframes sun-rise {
+  0% {
+    transform: translateY(-10vh) scale(1);
+  }
+  50%{
+    transform: translateY(0vh) scale(1.05);
+  }
+  100% {
+    transform: translateY(10vh) scale(1);
+  }
+}
+.advertisement img{
+    height: 100%;
+    border-radius: 24px;
+    display: none;
+    transition: opacity 0.5s;
+    opacity: 0;
+}
+.partners{
+    position: relative;
+    margin-top: 40vh;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.partners a{
+
+}
+.partners img{
+    height: 36vh;
+}
+@media screen and (max-width: 1100px) {
+    .partners{
+        flex-direction: column;
+        align-items: center;
+    }
+    .partners img{
+        width:80vw;
+        height: auto;
+    }
+}
+.last-news{
+    width: 80%;
+    margin-top: 30vh;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+}
+.last-news label:first-child{
+    font-size: 3em;
+}
+.contextMenu{
+    position: absolute;
+    visibility: hidden;
+    width: 300px;
+
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.contextMenu div{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contextMenu label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contextMenu input[type="number"] {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.contextMenu button {
+    background-color: #007BFF;
+    color: #ffffff;
+
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 16px;
+
+    width: 60%;
+    align-self: center;
+}
+
+.contextMenu button:hover {
+  background-color: #0056b3;
+}
+
+.contextMenu button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+#countdown{
+  display: flex;
+  width: 100%;
+  max-width: 70%;
+  justify-content: center;
+  margin-top: 32px;
+  gap: 24px;
+}
+.days-container,
+.hours-container,
+.minutes-container,
+.seconds-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.1);
+  border: 5px solid rgba(255,255,255,0.3);
+  width: 140px;
+  height: 140px;
+  border-radius: 99px;
+}
+
+.days,
+.hours,
+.minutes,
+.seconds {
+  font-size: 2.5em;
+  margin: 10px 0;
+}
+
+
+.days-label,
+.hours-label,
+.minutes-label,
+.seconds-label {
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}

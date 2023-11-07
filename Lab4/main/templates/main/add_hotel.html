@@ -1,0 +1,31 @@
+{% extends 'main/Base.html' %}
+
+{% block title %}
+Add Hotel
+{% endblock %}
+{% block main %}
+<form method="post">
+    {% csrf_token %}
+    <p>Name: <input type="text" name="name"></p>
+    <p>
+        Stars:
+        <select name="stars">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </p>
+    <p>Price: <input type="text" name="cost_per_day"></p>
+    <p>
+        Country:
+        <select name="country">
+            {% for country in countries%}
+            <option value="{{ country.id }}">{{ country.name }}</option>
+            {% endfor %}
+        </select>
+    </p>
+    <button class="login-button" type="submit">Add</button>
+</form>
+{% endblock %}

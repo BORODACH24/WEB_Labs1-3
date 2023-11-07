@@ -1,0 +1,157 @@
+{% extends 'main/Base.html' %}
+{% load static %}
+
+{% block title %}
+Feedback List
+{% endblock %}
+{% block style %}
+    <link href="{% static 'CSS/Sandbox.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block main %}
+<label class="main-label" style="text-transform: uppercase;">Welcome to the Sandbox</label>
+
+    <a tabindex="1" class="sandboxLink" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:visited" target="_blank">Test link</a>
+
+<div>
+    <ul>
+        <li>item_1</li>
+        <li>item_2</li>
+        <li>item_3</li>
+        <li>item_4</li>
+        <li>item_5</li>
+    </ul>
+</div>
+<div>
+    <input>
+    <input required>
+    <input disabled>
+    <input type="number" placeholder="1 to 5" min="1" max="5">
+    <input type="checkbox">
+</div>
+<q>Great quote</q>
+<q lang="ru">Great quote</q>
+<q lang="fr">Great quote</q>
+<label id="sandbox-label">Если кто-то причинил тебе зло, не мсти. Сядь на берегу реки, и вскоре ты увидишь, как мимо тебя проплывает труп твоего врага.</label>
+
+<label class="test-kerning">WA</label>
+<p class="test-float">
+    <img class="img left" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SNice.svg/640px-SNice.svg.png">
+    <img class="img right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SNice.svg/640px-SNice.svg.png">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+</p>
+<table>
+    <caption>Заголовок Таблицы</caption>
+    <thead>
+        <tr>
+            <th>Заголовок 1</th>
+            <th>Заголовок 2</th>
+            <th>Заголовок 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Ячейка 1</td>
+            <td></td> <!-- Пустая ячейка -->
+            <td>Ячейка 3</td>
+        </tr>
+        <tr>
+            <td>Ячейка 4</td>
+            <td>Ячейка 5</td>
+            <td>Ячейка 6</td>
+        </tr>
+        <tr>
+            <td>Ячейка 7</td>
+            <td>Ячейка 8</td>
+            <td>Ячейка 9</td>
+        </tr>
+    </tbody>
+</table>
+<div class = "container">
+ Этот гигантский грызун представляет собой жирного зверька с продолговатым телом, покрытым жёсткой лохматой шерстью пёстрой коричневой расцветки. Передние лапы у капибары длиннее задних, массивный огузок не имеет хвоста, и поэтому у неё всегда такой вид, будто она вот-вот собирается сесть. У неё крупные лапы с широкими перепончатыми пальцами, а когти на передних лапах, короткие и тупые, удивительно напоминают миниатюрные копыта. Вид у неё весьма аристократический: её плоская широкая голова и тупая, почти квадратная морда имеют благодушно-покровительственное выражение, придающее ей сходство с задумчивым львом. По земле капибара передвигается характерной шаркающей походкой или скачет вразвалку галопом, в воде же плавает и ныряет с поразительной лёгкостью и проворством. Капибара — флегматичный добродушный вегетарианец, лишённый ярких индивидуальных черт, присущих некоторым его сородичам, но этот недостаток восполняется у неё спокойным и дружелюбным нравом.
+</div>
+
+<section>
+    <p>Test P</p>
+    <div>
+        <p>Test P</p>
+    </div>
+    <label>Label</label>
+</section>
+
+<div class="wraper">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+
+<div>
+  <label for="size">Размер таблицы: </label>
+  <input type="number" id="size" value="3">
+  <button id="generateTable">Создать таблицу</button>
+</div>
+
+<table class="JS_table" id="table"></table>
+
+<div>
+    <section>
+<!--        <label for="row">Добавить ряд: </label>-->
+<!--        <input type="number" id="row" value="1">-->
+        <button id="addRow">Добавить ряд</button>
+    </section>
+    <section>
+<!--        <label for="column">Добавить колонку: </label>-->
+<!--        <input type="number" id="column" value="1">-->
+        <button id="addColumn">Добавить колонку</button>
+    </section>
+    <section>
+        <label for="max-select">Max-select: </label>
+        <input type="number" id="max-select" value="2">
+    </section>
+    <button id="transposeTable">Транспонировать таблицу</button>
+</div>
+<form id="bookSearchForm">
+    <label for="author">Фамилия автора:</label>
+    <input type="text" id="author" required>
+    <br>
+    <label for="year">Год издания (не ранее 1960):</label>
+    <input type="number" id="year" required min="1960">
+    <br>
+    <button type="submit">Поиск</button>
+</form>
+<div id="result"></div>
+
+<div class="JS-plate">
+    <div id="jsText">
+        5.	Возможность изменения размера шрифта и цвета текста, цвета фона страницы с помощью элементов формы, генерируемых при выборе соответствующего флажка. Размеры изображений не должны изменяться.
+        5.	Возможность изменения размера шрифта и цвета текста, цвета фона страницы с помощью элементов формы, генерируемых при выборе соответствующего флажка. Размеры изображений не должны изменяться.
+        5.	Возможность изменения размера шрифта и цвета текста, цвета фона страницы с помощью элементов формы, генерируемых при выборе соответствующего флажка. Размеры изображений не должны изменяться.
+        5.	Возможность изменения размера шрифта и цвета текста, цвета фона страницы с помощью элементов формы, генерируемых при выборе соответствующего флажка. Размеры изображений не должны изменяться.
+    </div>
+    <form class="JS-form" id="textChangeForm">
+        <label>
+            <input type="checkbox" id="colorInput">
+            Color
+        </label>
+        <label>
+            <input type="checkbox" id="sizeInput">
+            Size
+        </label>
+        <label>
+            <input type="checkbox" id="backgroundInput">
+            Background
+        </label>
+        <input type="color" id="jsTextColor">
+        <input type="number" id="jsTextSize" value="16">
+        <input type="color" id="jsBackgroundColor">
+    </form>
+</div>
+{% endblock %}
+{% block script %}
+    <script src="{% static 'JS/Sandbox.js' %}"></script>
+{% endblock %}
